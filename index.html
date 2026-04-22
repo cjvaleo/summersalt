@@ -44,7 +44,7 @@
 
 <!-- ============== SEO ============== -->
 <title>Summer-Salt Car Detailing | Mobile Car Detailing in Toms River & Ocean County, NJ</title>
-<meta name="description" content="Premium mobile car detailing serving Toms River, Seaside Heights, Brick, Lakewood and all of Ocean County NJ. We come to you. Standard $200, Premium $300. First time? Use code STANDARD for $25 off or PREMIUM for $35 off." />
+<meta name="description" content="Premium mobile car detailing serving Toms River, Seaside Heights, Brick, Lakewood and all of Ocean County NJ. We come to you. Standard $200, Premium $300. First time? Use code SUMMER for 15% off your first detail." />
 <meta name="keywords" content="car detailing Toms River NJ, mobile car detailing Ocean County, car detailing Seaside Heights, car detailer Brick NJ, mobile detailing Lakewood, mobile car wash Jersey Shore, car wash Toms River, interior detailing NJ, ceramic spray detailing" />
 <meta name="author" content="Summer-Salt Car Detailing" />
 <meta name="robots" content="index, follow" />
@@ -983,6 +983,47 @@ section[id], header[id] { scroll-margin-top: 80px; }
   background: var(--cream);
   margin-bottom: 24px;
 }
+.pkg-firsttime-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, var(--orange) 0%, var(--orange-deep) 100%);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  color: var(--cream);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(217,83,30,0.3);
+}
+.pkg-firsttime-code {
+  background: rgba(255,255,255,0.22);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+.pkg--premium .pkg-firsttime-banner {
+  background: linear-gradient(135deg, var(--sunny) 0%, #E09B40 100%);
+  color: var(--ink);
+  box-shadow: 0 4px 14px rgba(244,184,96,0.3);
+}
+.pkg--premium .pkg-firsttime-code {
+  background: rgba(26,22,18,0.18);
+  color: var(--ink);
+}
+.pkg-firsttime-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin-top: -10px;
+  margin-bottom: 22px;
+}
+.pkg--premium .pkg-firsttime-note { color: rgba(245,239,228,0.6); }
 .pkg--premium .pkg-prices { background: rgba(244,184,96,0.08); border: 1px solid rgba(244,184,96,0.15); }
 .pkg-price-item { text-align: center; }
 .pkg-price-label {
@@ -1976,7 +2017,7 @@ section[id], header[id] { scroll-margin-top: 80px; }
     <div class="promo-slide">
       ✨ <strong>FIRST TIME BOOKING?</strong>
       <span class="promo-divider">•</span>
-      Use code <span class="promo-code">STANDARD</span> for <strong>$25 off Standard</strong> or <span class="promo-code">PREMIUM</span> for <strong>$35 off Premium</strong>
+      Use code <span class="promo-code">SUMMER</span> for <strong>15% off your first detail</strong>
     </div>
   </div>
 </div>
@@ -2101,18 +2142,25 @@ section[id], header[id] { scroll-margin-top: 80px; }
           <li>Wheels &amp; tires cleaned &amp; shined</li>
           <li>3-Month wax spray</li>
         </ul>
+        <div class="pkg-firsttime-banner">
+          ✨ First time? Save 15% with code
+          <span class="pkg-firsttime-code">SUMMER</span>
+        </div>
         <div class="pkg-prices">
           <div class="pkg-price-item">
             <div class="pkg-price-label">Sedan</div>
-            <div class="pkg-price">$200</div>
+            <div class="pkg-price-was">$200</div>
+            <div class="pkg-price">$170</div>
           </div>
           <div class="pkg-price-item">
             <div class="pkg-price-label">SUV</div>
-            <div class="pkg-price">$240</div>
+            <div class="pkg-price-was">$240</div>
+            <div class="pkg-price">$204</div>
           </div>
           <div class="pkg-price-item">
             <div class="pkg-price-label">Truck</div>
-            <div class="pkg-price">$270</div>
+            <div class="pkg-price-was">$270</div>
+            <div class="pkg-price">$229</div>
           </div>
         </div>
         <a href="#book" class="pkg-btn" data-pkg="Standard">
@@ -2137,18 +2185,25 @@ section[id], header[id] { scroll-margin-top: 80px; }
           <li>6-Month ceramic spray</li>
           <li>Personal car scent</li>
         </ul>
+        <div class="pkg-firsttime-banner">
+          ✨ First time? Save 15% with code
+          <span class="pkg-firsttime-code">SUMMER</span>
+        </div>
         <div class="pkg-prices">
           <div class="pkg-price-item">
             <div class="pkg-price-label">Sedan</div>
-            <div class="pkg-price">$300</div>
+            <div class="pkg-price-was">$300</div>
+            <div class="pkg-price">$255</div>
           </div>
           <div class="pkg-price-item">
             <div class="pkg-price-label">SUV</div>
-            <div class="pkg-price">$330</div>
+            <div class="pkg-price-was">$330</div>
+            <div class="pkg-price">$280</div>
           </div>
           <div class="pkg-price-item">
             <div class="pkg-price-label">Truck</div>
-            <div class="pkg-price">$360</div>
+            <div class="pkg-price-was">$360</div>
+            <div class="pkg-price">$306</div>
           </div>
         </div>
         <a href="#book" class="pkg-btn" data-pkg="Premium">
@@ -2164,7 +2219,7 @@ section[id], header[id] { scroll-margin-top: 80px; }
         <div class="deals-callout-icon">💰</div>
         <div class="deals-callout-text">
           <strong>Want to save on your detail?</strong>
-          <span>First-timers: use code <strong style="color: var(--sunny);">STANDARD</strong> for $25 off Standard or <strong style="color: var(--sunny);">PREMIUM</strong> for $35 off Premium. Plus returning customer, referral, and group booking deals below.</span>
+          <span>First-timers: use code <strong style="color: var(--sunny);">SUMMER</strong> for 15% off your first detail. Plus returning customer, referral, and group booking deals below.</span>
         </div>
         <a href="#deals" class="deals-callout-cta">
           See All Deals
@@ -2194,8 +2249,8 @@ section[id], header[id] { scroll-margin-top: 80px; }
         <span class="deal-tag deal-tag--hot">First Time Booking</span>
         <div class="deal-icon">✨</div>
         <h3>New Customer Discount</h3>
-        <span class="deal-savings">$25 off Standard / $35 off Premium</span>
-        <p>First time booking with us? Use code <strong style="font-family: monospace; background: rgba(217,83,30,0.1); padding: 2px 8px; border-radius: 4px; letter-spacing: 0.05em;">STANDARD</strong> at checkout for $25 off any Standard package, or <strong style="font-family: monospace; background: rgba(217,83,30,0.1); padding: 2px 8px; border-radius: 4px; letter-spacing: 0.05em;">PREMIUM</strong> for $35 off any Premium package. Auto-applies in Square at checkout.</p>
+        <span class="deal-savings">15% off your first detail</span>
+        <p>First time booking with us? Use code <strong style="font-family: monospace; background: rgba(217,83,30,0.1); padding: 2px 8px; border-radius: 4px; letter-spacing: 0.05em;">SUMMER</strong> at checkout for 15% off any detail. Auto-applies in Square, or just text us and we'll apply it for you.</p>
         <a href="#book" class="deal-cta">
           Book with code
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -2635,7 +2690,7 @@ section[id], header[id] { scroll-margin-top: 80px; }
     <div style="text-align: center; max-width: 720px; margin: 0 auto 50px;">
       <h2 class="reveal" data-delay="1">Pick your time. Book in 30 seconds.</h2>
       <p class="reveal" data-delay="2" style="font-size: 1.08rem; color: rgba(245,239,228,0.9); margin-bottom: 24px;">
-        Real-time availability below. Pick your service, your date, and your time. <strong style="color: var(--sunny);">First time booking?</strong> Use code <strong style="font-family: monospace; letter-spacing: 0.05em;">STANDARD</strong> for $25 off Standard or <strong style="font-family: monospace; letter-spacing: 0.05em;">PREMIUM</strong> for $35 off Premium at checkout.
+        Real-time availability below. Pick your service, your date, and your time. <strong style="color: var(--sunny);">First time booking?</strong> Use code <strong style="font-family: monospace; letter-spacing: 0.05em;">SUMMER</strong> at checkout for 15% off your first detail.
       </p>
 
       <!-- Quick contact pills -->
