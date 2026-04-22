@@ -610,6 +610,44 @@ section[id], header[id] { scroll-margin-top: 80px; }
 /* ============================================================
    SQUARE BOOKING WIDGET
    ============================================================ */
+.deposit-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 720px;
+  margin: 0 auto 32px;
+  padding: 16px 22px;
+  background: rgba(245,239,228,0.95);
+  border-left: 4px solid var(--orange);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.deposit-notice-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: var(--orange);
+  color: var(--cream);
+  border-radius: 50%;
+  margin-top: 2px;
+}
+.deposit-notice-text {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.deposit-notice-text strong {
+  color: var(--orange-deep);
+  font-weight: 700;
+}
+@media (max-width: 600px) {
+  .deposit-notice { padding: 14px 18px; gap: 12px; }
+  .deposit-notice-text { font-size: 0.88rem; }
+  .deposit-notice-icon { width: 32px; height: 32px; }
+}
 .square-wrap {
   background: var(--cream);
   border-radius: var(--radius-lg);
@@ -2125,7 +2163,7 @@ section[id], header[id] { scroll-margin-top: 80px; }
   <div class="wrap">
     <div class="services-head">
       <h2 class="reveal">Detailing packages built for every vehicle.</h2>
-      <p class="reveal" data-delay="1">Pick the level of care your car deserves. All packages are performed on-site at your location. Prices may adjust based on vehicle condition — we'll confirm before we start.</p>
+      <p class="reveal" data-delay="1">Pick the level of care your car deserves. All packages are performed on-site at your location. <strong>20% deposit secures your booking</strong> — applied to your final bill. Prices may adjust based on vehicle condition; we'll always confirm before we start.</p>
     </div>
 
     <div class="packages">
@@ -2650,6 +2688,18 @@ section[id], header[id] { scroll-margin-top: 80px; }
       </details>
 
       <details class="faq-item reveal">
+        <summary>Why do you require a deposit?</summary>
+        <div class="faq-answer">
+          <p>We hold a <strong>20% deposit</strong> when you book to confirm your appointment time. Detailing takes 2–4 hours, and we block off our whole day around your booking — sometimes turning down other customers in your area.</p>
+          <p>The deposit gets <strong>applied directly to your final bill</strong> — it's not an extra fee, it just locks in your spot.</p>
+          <p><strong>Cancellation policy:</strong></p>
+          <p>✅ <strong>24+ hours notice</strong> — full refund of your deposit, no questions asked<br>
+          ⏰ <strong>Less than 24 hours</strong> — deposit is forfeit (this rarely happens, but it covers our day)<br>
+          🌧️ <strong>Weather or our cancellation</strong> — we reschedule with no penalty</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
         <summary>What if my car is really dirty? Will the price go up?</summary>
         <div class="faq-answer">
           <p>Our listed prices cover most vehicles in normal condition. If a car needs significantly more time — heavy pet hair, deep stains, mold, construction debris, etc. — we'll let you know upfront before we start. <strong>No surprise charges, ever.</strong></p>
@@ -2703,6 +2753,16 @@ section[id], header[id] { scroll-margin-top: 80px; }
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
           Call (732) 955-1026
         </a>
+      </div>
+    </div>
+
+    <!-- Deposit transparency notice -->
+    <div class="deposit-notice reveal" data-delay="3">
+      <div class="deposit-notice-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      </div>
+      <div class="deposit-notice-text">
+        <strong>Heads up — 20% deposit secures your booking.</strong> It's applied directly to your final bill (not an extra fee), and you get a full refund if you cancel 24+ hours ahead. Just locks in your spot.
       </div>
     </div>
 
