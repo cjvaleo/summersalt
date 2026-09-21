@@ -131,6 +131,15 @@ nav a:hover{color:var(--text)}
 .glink .stars{font-size:.78rem}
 @media (max-width:520px){.float.f1{left:8px}.float.f2{right:8px}}
 
+/* hero: slideshow of recent jobs overlapping the photo */
+.work-show{position:absolute;z-index:3;top:9%;left:-11%;width:42%;aspect-ratio:1;border-radius:18px;overflow:hidden;background:var(--card);
+  border:4px solid var(--bg);box-shadow:0 24px 50px -14px rgba(0,0,0,.75)}
+.work-show img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+.work-show img.on{opacity:1}
+.ws-tag{position:absolute;left:8px;bottom:8px;z-index:1;background:rgba(20,17,14,.82);color:#fff;font-size:.72rem;font-weight:700;
+  padding:.25rem .6rem;border-radius:999px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+@media (max-width:899px){.work-show{left:10px;top:10px;width:38%;border-width:3px;border-radius:14px}}
+@media (prefers-reduced-motion:reduce){.work-show img{transition:none}}
 /* ---------- before / after ---------- */
 .results{background:var(--bg2);border-block:1px solid var(--line)}
 .ba-grid{display:grid;gap:clamp(16px,2.4vw,26px)}
@@ -435,6 +444,21 @@ footer a{color:var(--muted)}
     </div>
 
     <div class="hero-media">
+      <div class="work-show" aria-label="Photos of recent work">
+        <img class="on" src="ss-w1.jpg" alt="Matte BMW X6 after a detail" width="520" height="520">
+        <img data-src="ss-w2.jpg" alt="Black Corvette after a hand wash" width="520" height="520">
+        <img data-src="ss-w3.jpg" alt="Clean Honda Civic interior" width="520" height="520">
+        <img data-src="ss-w4.jpg" alt="Gray Dodge Durango after a detail" width="520" height="520">
+        <img data-src="ss-w5.jpg" alt="Clean Mercedes interior" width="520" height="520">
+        <img data-src="ss-w6.jpg" alt="Red Honda Accord after a hand wash" width="520" height="520">
+        <img data-src="ss-w7.jpg" alt="Clean Chevy interior" width="520" height="520">
+        <img data-src="ss-w8.jpg" alt="White Jeep Grand Cherokee L after a detail" width="520" height="520">
+        <img data-src="ss-w9.jpg" alt="Detailed Corvette interior" width="520" height="520">
+        <img data-src="ss-w10.jpg" alt="Black Honda CR-V after a hand wash" width="520" height="520">
+        <img data-src="ss-w11.jpg" alt="Clean Durango back seats" width="520" height="520">
+        <img data-src="ss-w12.jpg" alt="Clean center console" width="520" height="520">
+        <span class="ws-tag">Recent work</span>
+      </div>
       <div class="frame"><img src="ss-hero.jpg" fetchpriority="high" decoding="async" alt="Christian, owner of Summer-Salt Car Detailing" width="760" height="950"></div>
       <a class="float f2 glink" href="https://www.google.com/search?q=Summer-Salt+Car+Detailing+Seaside+Heights+NJ" target="_blank" rel="noopener" aria-label="See our 5.0 Google rating"><svg class="gmark" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg><span><b>5.0 <span class="stars">★★★★★</span></b><small>Google reviews ↗</small></span></a>
     </div>
@@ -778,6 +802,14 @@ footer a{color:var(--muted)}
     if(best&&bd<28) show(best,best.getAttribute('aria-label'));
   });
   document.addEventListener('click',function(e){if(!e.target.closest||!e.target.closest('.pins'))tip.hidden=true});
+})();
+/* recent-work slideshow: load the rest after the page, then crossfade every 3s */
+(function(){var s=document.querySelector('.work-show');if(!s)return;var im=[].slice.call(s.querySelectorAll('img')),i=0;
+  function more(){im.forEach(function(x){if(x.dataset.src&&!x.getAttribute('src'))x.src=x.dataset.src})}
+  if(document.readyState==='complete')more();else window.addEventListener('load',more);
+  var slow=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  setInterval(function(){if(document.hidden)return;var n=(i+1)%im.length;
+    if(!im[n].complete||!im[n].naturalWidth)return;im[i].classList.remove('on');im[n].classList.add('on');i=n},slow?6000:3000);
 })();
 /* hide the sticky mobile button while the booking form is on screen */
 (function(){var st=document.querySelector('.stick'),bk=document.getElementById('quote-sec');
