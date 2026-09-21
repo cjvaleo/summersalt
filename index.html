@@ -7,7 +7,7 @@
 <meta name="description" content="Mobile car detailing across Ocean and Monmouth County, NJ. We come to your driveway. Get a free quote in 30 seconds and $20 off when you text it in.">
 <meta name="theme-color" content="#14110E">
 <link rel="icon" href="ss-logo.webp">
-<link rel="preload" as="image" href="ss-hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="ss-w1.jpg" fetchpriority="high">
 <meta property="og:title" content="Summer-Salt Car Detailing — Mobile Detailing, Ocean County NJ">
 <meta property="og:description" content="We come to your driveway. Free quote in 30 seconds, $20 off when you text it in.">
 <meta property="og:type" content="website">
@@ -131,15 +131,13 @@ nav a:hover{color:var(--text)}
 .glink .stars{font-size:.78rem}
 @media (max-width:520px){.float.f1{left:8px}.float.f2{right:8px}}
 
-/* hero: slideshow of recent jobs overlapping the photo */
-.work-show{position:absolute;z-index:3;top:9%;left:-11%;width:42%;aspect-ratio:1;border-radius:18px;overflow:hidden;background:var(--card);
-  border:4px solid var(--bg);box-shadow:0 24px 50px -14px rgba(0,0,0,.75)}
-.work-show img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
-.work-show img.on{opacity:1}
-.ws-tag{position:absolute;left:8px;bottom:8px;z-index:1;background:rgba(20,17,14,.82);color:#fff;font-size:.72rem;font-weight:700;
-  padding:.25rem .6rem;border-radius:999px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-@media (max-width:899px){.work-show{left:10px;top:10px;width:38%;border-width:3px;border-radius:14px}}
-@media (prefers-reduced-motion:reduce){.work-show img{transition:none}}
+/* crossfading photo boxes */
+.slides{position:relative;overflow:hidden}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+.slides img.on{opacity:1}
+.ws-tag{position:absolute;left:12px;bottom:12px;z-index:1;background:rgba(20,17,14,.82);color:#fff;font-size:.78rem;font-weight:700;
+  padding:.3rem .7rem;border-radius:999px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+@media (prefers-reduced-motion:reduce){.slides img{transition:none}}
 /* ---------- before / after ---------- */
 .results{background:var(--bg2);border-block:1px solid var(--line)}
 .ba-grid{display:grid;gap:clamp(16px,2.4vw,26px)}
@@ -346,6 +344,8 @@ textarea.inp{resize:vertical;min-height:84px}
 .next[aria-disabled="true"]{opacity:.4;cursor:not-allowed;box-shadow:none}
 
 /* ---------- reviews ---------- */
+#ti-reviews{margin-bottom:0}
+#revFallback[hidden]{display:none}
 .revs{display:grid;gap:1rem}
 @media (min-width:820px){.revs{grid-template-columns:repeat(3,1fr)}}
 .rev{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem}
@@ -444,22 +444,21 @@ footer a{color:var(--muted)}
     </div>
 
     <div class="hero-media">
-      <div class="work-show" aria-label="Photos of recent work">
-        <img class="on" src="ss-w1.jpg" alt="Matte BMW X6 after a detail" width="520" height="520">
-        <img data-src="ss-w2.jpg" alt="Black Corvette after a hand wash" width="520" height="520">
-        <img data-src="ss-w3.jpg" alt="Clean Honda Civic interior" width="520" height="520">
-        <img data-src="ss-w4.jpg" alt="Gray Dodge Durango after a detail" width="520" height="520">
-        <img data-src="ss-w5.jpg" alt="Clean Mercedes interior" width="520" height="520">
-        <img data-src="ss-w6.jpg" alt="Red Honda Accord after a hand wash" width="520" height="520">
-        <img data-src="ss-w7.jpg" alt="Clean Chevy interior" width="520" height="520">
-        <img data-src="ss-w8.jpg" alt="White Jeep Grand Cherokee L after a detail" width="520" height="520">
-        <img data-src="ss-w9.jpg" alt="Detailed Corvette interior" width="520" height="520">
-        <img data-src="ss-w10.jpg" alt="Black Honda CR-V after a hand wash" width="520" height="520">
-        <img data-src="ss-w11.jpg" alt="Clean Durango back seats" width="520" height="520">
-        <img data-src="ss-w12.jpg" alt="Clean center console" width="520" height="520">
+      <div class="frame slides" data-every="3000" aria-label="Photos of recent work">
+        <img class="on" src="ss-w1.jpg" alt="Matte BMW X6 after a detail" width="640" height="800" fetchpriority="high">
+        <img data-src="ss-w2.jpg" alt="Black Corvette after a hand wash" width="640" height="800">
+        <img data-src="ss-w3.jpg" alt="Clean Honda Civic interior" width="640" height="800">
+        <img data-src="ss-w4.jpg" alt="Gray Dodge Durango after a detail" width="640" height="800">
+        <img data-src="ss-w5.jpg" alt="Clean Mercedes interior" width="640" height="800">
+        <img data-src="ss-w6.jpg" alt="Red Honda Accord after a hand wash" width="640" height="800">
+        <img data-src="ss-w7.jpg" alt="Clean Chevy interior" width="640" height="800">
+        <img data-src="ss-w8.jpg" alt="White Jeep Grand Cherokee L after a detail" width="640" height="800">
+        <img data-src="ss-w9.jpg" alt="Detailed Corvette interior" width="640" height="800">
+        <img data-src="ss-w10.jpg" alt="Black Honda CR-V after a hand wash" width="640" height="800">
+        <img data-src="ss-w11.jpg" alt="Clean Durango back seats" width="640" height="800">
+        <img data-src="ss-w12.jpg" alt="Clean center console" width="640" height="800">
         <span class="ws-tag">Recent work</span>
       </div>
-      <div class="frame"><img src="ss-hero.jpg" fetchpriority="high" decoding="async" alt="Christian, owner of Summer-Salt Car Detailing" width="760" height="950"></div>
       <a class="float f2 glink" href="https://www.google.com/search?q=Summer-Salt+Car+Detailing+Seaside+Heights+NJ" target="_blank" rel="noopener" aria-label="See our 5.0 Google rating"><svg class="gmark" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg><span><b>5.0 <span class="stars">★★★★★</span></b><small>Google reviews ↗</small></span></a>
     </div>
   </div>
@@ -489,7 +488,10 @@ footer a{color:var(--muted)}
 
 <section class="about" id="about">
   <div class="wrap about-grid">
-    <img class="me-photo" src="ss-me_portrait.jpg" alt="Christian running the ball for Toms River East, #24" width="480" height="839" loading="lazy" decoding="async">
+    <div class="me-photo slides" data-every="4000">
+      <img class="on" src="ss-me_point.jpg" alt="Christian, owner of Summer-Salt Car Detailing" width="480" height="839" loading="lazy" decoding="async">
+      <img src="ss-me_portrait.jpg" alt="Christian running the ball for Toms River East" width="480" height="839" loading="lazy" decoding="async">
+    </div>
     <div>
       <h2>Hi, I'm Christian 👋</h2>
       <p>I started Summer-Salt last summer in my driveway in Seaside Heights with a pressure washer and one goal: make every car look new again.</p>
@@ -684,7 +686,8 @@ footer a{color:var(--muted)}
 <section id="reviews">
   <div class="wrap">
     <div class="sec-head"><h2>5.0 stars on Google</h2><p>What Jersey Shore drivers are saying. <a href="https://www.google.com/search?q=Summer-Salt+Car+Detailing+Seaside+Heights+NJ" target="_blank" rel="noopener">See all reviews on Google ↗</a></p></div>
-    <div class="revs">
+    <div id="ti-reviews"><script defer async src='https://cdn.trustindex.io/loader.js?61904a0810e3953037066a09c58'></script></div>
+    <div class="revs" id="revFallback">
       <div class="rev"><div class="rev-top"><span class="stars">★★★★★</span><svg class="gmark" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
         <p>My car looks better than the day I took it off the lot. The professionalism and the detail to his work is nothing short of stellar.</p><cite>Google review</cite></div>
       <div class="rev"><div class="rev-top"><span class="stars">★★★★★</span><svg class="gmark" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
@@ -803,13 +806,20 @@ footer a{color:var(--muted)}
   });
   document.addEventListener('click',function(e){if(!e.target.closest||!e.target.closest('.pins'))tip.hidden=true});
 })();
-/* recent-work slideshow: load the rest after the page, then crossfade every 3s */
-(function(){var s=document.querySelector('.work-show');if(!s)return;var im=[].slice.call(s.querySelectorAll('img')),i=0;
-  function more(){im.forEach(function(x){if(x.dataset.src&&!x.getAttribute('src'))x.src=x.dataset.src})}
-  if(document.readyState==='complete')more();else window.addEventListener('load',more);
-  var slow=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  setInterval(function(){if(document.hidden)return;var n=(i+1)%im.length;
-    if(!im[n].complete||!im[n].naturalWidth)return;im[i].classList.remove('on');im[n].classList.add('on');i=n},slow?6000:3000);
+/* photo slideshows: load the rest after the page, then crossfade */
+(function(){var slow=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.slides').forEach(function(s){var im=[].slice.call(s.querySelectorAll('img')),i=0;if(im.length<2)return;
+    function more(){im.forEach(function(x){if(x.dataset.src&&!x.getAttribute('src'))x.src=x.dataset.src})}
+    if(document.readyState==='complete')more();else window.addEventListener('load',more);
+    setInterval(function(){if(document.hidden)return;var n=(i+1)%im.length;
+      if(!im[n].complete||!im[n].naturalWidth)return;im[i].classList.remove('on');im[n].classList.add('on');i=n},(+s.dataset.every||3000)*(slow?2:1));
+  });
+})();
+/* Trustindex: once the live Google reviews widget shows up, hide the backup reviews */
+(function(){var box=document.getElementById('ti-reviews'),fb=document.getElementById('revFallback');if(!box||!fb)return;
+  function check(){var w=document.querySelector('[class*="ti-widget"]');if(w&&w.offsetHeight>40){fb.hidden=true;return true}return false}
+  var mo=new MutationObserver(function(){if(check())mo.disconnect()});mo.observe(document.body,{childList:true,subtree:true});
+  setTimeout(function(){mo.disconnect()},15000);
 })();
 /* hide the sticky mobile button while the booking form is on screen */
 (function(){var st=document.querySelector('.stick'),bk=document.getElementById('quote-sec');
