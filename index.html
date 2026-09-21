@@ -194,6 +194,10 @@ nav a:hover{color:var(--text)}
 .bk{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;
   box-shadow:0 40px 80px -40px rgba(0,0,0,.8);scroll-margin-top:84px}
 .bk-head{padding:clamp(20px,3.5vw,32px) clamp(18px,3.5vw,34px) 0;text-align:center}
+.bk-me{display:inline-flex;align-items:center;gap:.9rem;background:var(--card2);border:1px solid var(--line);border-radius:18px;padding:.5rem 1.1rem .5rem .5rem;margin-bottom:1rem;text-align:left}
+.bk-me img{width:96px;height:auto;border-radius:12px;border:2px solid var(--orange)}
+.bk-me b{display:block;font-size:.92rem}
+.bk-me small{color:var(--muted);font-size:.8rem}
 .bk-head h2{font-size:clamp(1.6rem,1.3rem + 1.4vw,2.2rem)}
 .bk-head p{color:var(--muted);margin:.4rem 0 0;font-size:.95rem}
 .bk-head p b{color:var(--sunny)}
@@ -459,7 +463,6 @@ footer a{color:var(--muted)}
     <img class="me-photo" src="ss-me_portrait.jpg" alt="Christian running the ball for Toms River East, #24" width="480" height="839" loading="lazy" decoding="async">
     <div>
       <h2>Hi, I'm Christian 👋</h2>
-      <p class="me-tag">🏈 Toms River East Football · #24</p>
       <p>I started Summer-Salt last summer in my driveway in Seaside Heights with a pressure washer and one goal: make every car look new again.</p>
       <p>Now I come to you anywhere in Ocean and Monmouth County. When you book, I'm the one who shows up and details your car, start to finish. No deposit, you pay when it's done, and I don't leave until you're happy.</p>
       <div class="cta-strip left">
@@ -514,6 +517,7 @@ footer a{color:var(--muted)}
   <div class="wrap">
     <div class="bk" id="quote">
       <div class="bk-head">
+        <div class="bk-me"><img src="ss-me_avatar.jpg" alt="Christian in his Ocean County #15 jersey" width="420" height="548"><span><b>I'll text you back personally</b><small>— Christian, owner</small></span></div>
         <h2>Get your free quote</h2>
         <p>Takes 30 seconds · No deposit · <b class="deal-amt">$20 off</b> when you text it in</p>
       </div>
