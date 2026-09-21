@@ -150,6 +150,19 @@ nav a:hover{color:var(--text)}
 .pair figcaption{grid-column:1/-1;background:var(--card);color:var(--muted);font-size:.92rem;padding:.85rem 1rem}
 .ba-tag{position:absolute;top:12px;background:rgba(20,17,14,.85);color:#fff;font-size:.78rem;font-weight:700;padding:.3rem .7rem;border-radius:999px;letter-spacing:.02em}
 .ba-tag.l{left:12px}.ba-tag.r{left:12px;right:auto;background:var(--orange)}
+/* ---------- CTA strip + about ---------- */
+.cta-strip{margin-top:clamp(26px,4vw,40px);display:flex;flex-direction:column;align-items:center;gap:.6rem;text-align:center}
+.cta-strip p{margin:0;color:var(--muted);font-size:.92rem}
+.cta-strip p b{color:var(--sunny)}
+.cta-strip a:not(.btn){color:var(--text);font-weight:700}
+.cta-strip.left{align-items:flex-start;text-align:left}
+@media (max-width:759px){.cta-strip.left{align-items:center;text-align:center}}
+.about-grid{display:grid;gap:clamp(24px,4vw,56px);align-items:center}
+@media (min-width:760px){.about-grid{grid-template-columns:minmax(220px,340px) 1fr}.me-photo{max-width:290px}}
+.me-photo{width:100%;max-width:190px;height:auto;aspect-ratio:5/8;object-fit:cover;border-radius:50%;margin:0 auto;border:3px solid var(--orange);box-shadow:0 30px 60px -30px rgba(217,83,30,.55)}
+.about h2{font-size:clamp(1.8rem,1.3rem + 2vw,2.6rem);margin-bottom:.5em}
+.about p{color:var(--muted);max-width:52ch}
+.float img.me-av{border-radius:50%;object-fit:cover;border:2px solid var(--orange)}
 /* ---------- packages ---------- */
 .packs{display:grid;gap:clamp(16px,2.4vw,26px)}
 @media (min-width:820px){.packs{grid-template-columns:1fr 1fr}}
@@ -413,7 +426,7 @@ footer a{color:var(--muted)}
     <div class="hero-media">
       <div class="frame"><img src="ss-hero.jpg" fetchpriority="high" decoding="async" alt="SUV covered in foam during a Summer-Salt hand wash" width="750" height="1000"></div>
       <a class="float f2 glink" href="https://www.google.com/search?q=Summer-Salt+Car+Detailing+Seaside+Heights+NJ" target="_blank" rel="noopener" aria-label="See our 5.0 Google rating"><svg class="gmark" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg><span><b>5.0 <span class="stars">★★★★★</span></b><small>Google reviews ↗</small></span></a>
-      <div class="float f1"><img src="ss-logo.webp" alt=""><span><b>Mobile detailing</b><small>Right in your driveway</small></span></div>
+      <div class="float f1"><img class="me-av" src="ss-me_avatar.jpg" alt="Christian, owner of Summer-Salt"><span><b>Christian · Owner</b><small>I detail every car myself</small></span></div>
     </div>
   </div>
 </div>
@@ -434,7 +447,27 @@ footer a{color:var(--muted)}
       </figure>
     </div>
   </div>
+  <div class="wrap"><div class="cta-strip">
+    <a class="btn btn-main" href="#quote">Get my free quote</a>
+    <p><b class="deal-amt">$20 off</b> online · $40 off your first detail · or text <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></p>
+  </div></div>
 </section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <img class="me-photo" src="ss-me_portrait.jpg" alt="Christian, owner of Summer-Salt Car Detailing" width="480" height="768" loading="lazy" decoding="async">
+    <div>
+      <h2>Hi, I'm Christian 👋</h2>
+      <p>I started Summer-Salt last summer in my driveway in Seaside Heights with a pressure washer and one goal: make every car look new again.</p>
+      <p>Now I come to you anywhere in Ocean and Monmouth County. When you book, I'm the one who shows up and details your car, start to finish. No deposit, you pay when it's done, and I don't leave until you're happy.</p>
+      <div class="cta-strip left">
+        <a class="btn btn-main" href="#quote">Get my free quote</a>
+        <p>or text me: <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section id="packages">
   <div class="wrap">
@@ -625,6 +658,10 @@ footer a{color:var(--muted)}
         <p>If I could give 10 stars, I would. Superior service from start to finish. My truck has never looked better.</p><cite>Google review</cite></div>
     </div>
   </div>
+  <div class="wrap"><div class="cta-strip">
+    <a class="btn btn-main" href="#quote">Get my free quote</a>
+    <p><b class="deal-amt">$20 off</b> online · $40 off your first detail · or text <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></p>
+  </div></div>
 </section>
 
 <section class="results">
@@ -636,6 +673,10 @@ footer a{color:var(--muted)}
       <li><h3>I come to you</h3><p>At your home anywhere in Ocean or Monmouth County. I just need an outdoor spigot and an outlet near the car. Pay when it's done — cash, card, Venmo, Zelle or Apple Pay.</p></li>
     </ol>
   </div>
+  <div class="wrap"><div class="cta-strip">
+    <a class="btn btn-main" href="#quote">Get my free quote</a>
+    <p><b class="deal-amt">$20 off</b> online · $40 off your first detail · or text <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></p>
+  </div></div>
 </section>
 
 <section id="area">
@@ -658,6 +699,10 @@ footer a{color:var(--muted)}
       </div>
     </div>
   </div>
+  <div class="wrap"><div class="cta-strip">
+    <a class="btn btn-main" href="#quote">Get my free quote</a>
+    <p><b class="deal-amt">$20 off</b> online · $40 off your first detail · or text <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></p>
+  </div></div>
 </section>
 
 
@@ -738,7 +783,7 @@ document.querySelectorAll('.ba').forEach(function(b){
 
   /* ===== DEALS — change amounts/codes here =====
      Everyone gets "web". A link ending in ?deal=fb gets "fb" instead. */
-  var DEALS={ web:{off:20,code:'WEB20'}, fb:{off:30,code:'FB30'} };
+  var DEALS={ web:{off:20,code:'WEB20'}, fb:{off:20,code:'FB20'} };
   var dealKey='web';
   try{
     var qp=new URLSearchParams(location.search).get('deal');
