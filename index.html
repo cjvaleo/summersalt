@@ -11,6 +11,11 @@
 <meta property="og:title" content="Summer-Salt Car Detailing — Mobile Detailing, Ocean County NJ">
 <meta property="og:description" content="We come to your driveway. Free quote in 30 seconds, $20 off when you text it in.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://summersaltdetailing.com/">
+<meta property="og:image" content="https://summersaltdetailing.com/ss-ad1.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -796,7 +801,10 @@ document.querySelectorAll('.ba').forEach(function(b){
     if(qp&&DEALS[qp]){dealKey=qp;sessionStorage.setItem('ssDeal',qp)}
     else if(DEALS[sessionStorage.getItem('ssDeal')]) dealKey=sessionStorage.getItem('ssDeal');
   }catch(e){}
-  var DEAL=DEALS[dealKey];
+  var DEAL=Object.assign({},DEALS[dealKey]);
+  /* which Facebook ad card they came from (?ad=1..6) — shows up in the text as e.g. FB20-3 */
+  try{var adq=new URLSearchParams(location.search).get('ad');if(adq&&/^\d{1,2}$/.test(adq))sessionStorage.setItem('ssAd',adq);
+    var adn=sessionStorage.getItem('ssAd');if(adn&&dealKey==='fb')DEAL.code+='-'+adn}catch(e){}
   /* First-time customer discount (checkbox on the "Your info" step) */
   var FIRST={off:20,code:'FIRST20'};  // extra $ off when they tick "first detail" — set off:0 to turn off
   document.querySelectorAll('.deal-amt').forEach(function(el){el.textContent='$'+DEAL.off+' off'});
