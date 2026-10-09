@@ -11,7 +11,8 @@
 <meta property="og:title" content="Summer-Salt Car Detailing — Mobile Detailing, Ocean County NJ">
 <meta property="og:description" content="We come to your driveway. Free quote in 30 seconds, $20 off when you text it in.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://summersaltdetailing.com/">
+<link rel="canonical" href="https://www.summersaltdetailing.com/">
+<meta property="og:url" content="https://www.summersaltdetailing.com/">
 <meta property="og:image" content="https://summersaltdetailing.com/ss-ad1.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -33,9 +34,11 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"AutoDetailing","name":"Summer-Salt Car Detailing",
 "description":"Mobile car detailing serving Toms River, Seaside Heights and Ocean County, New Jersey.",
-"telephone":"+1-732-955-1026","url":"https://www.summersaltdetailing.com","priceRange":"$$",
+"telephone":"+1-732-955-1026","url":"https://www.summersaltdetailing.com/","image":"https://www.summersaltdetailing.com/ss-ad1.jpg","logo":"https://www.summersaltdetailing.com/ss-logo.webp","priceRange":"$$","sameAs":["https://www.instagram.com/SummerSalt.CarDetailing/"],
+"paymentAccepted":"Cash, Credit Card, Venmo, Zelle, Apple Pay",
+"makesOffer":[{"@type":"Offer","name":"Standard Detail","price":"200","priceCurrency":"USD"},{"@type":"Offer","name":"Premium Detail","price":"300","priceCurrency":"USD"}],
 "address":{"@type":"PostalAddress","addressLocality":"Seaside Heights","addressRegion":"NJ","addressCountry":"US"},
-"areaServed":["Ocean County, NJ","Monmouth County, NJ","Toms River, NJ","Asbury Park, NJ","Freehold, NJ","Brick, NJ","Lakewood, NJ","Seaside Heights, NJ","Lavallette, NJ","Brick, NJ","Point Pleasant, NJ","Lakewood, NJ","Bayville, NJ","Manchester, NJ","Island Heights, NJ","Ortley Beach, NJ"]}
+"areaServed":["Ocean County, NJ","Monmouth County, NJ","Toms River, NJ","Seaside Heights, NJ","Brick, NJ","Lakewood, NJ","Point Pleasant, NJ","Lavallette, NJ","Bayville, NJ","Manchester, NJ","Island Heights, NJ","Ortley Beach, NJ","Asbury Park, NJ","Freehold, NJ"]}
 </script>
 
 <style>
@@ -631,9 +634,11 @@ footer a{color:var(--muted)}
       <div class="pane" data-step="6" hidden>
         <h3>Your info</h3><p class="sub">So I know who I'm texting back</p>
         <label class="fld">Your name<input class="inp" id="qName" autocomplete="given-name" placeholder="First name"></label>
+        <label class="fld">Cell phone<input class="inp" id="qPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(732) 555-0123"></label>
         <label class="fld">Year, make &amp; model <small>(optional)</small><input class="inp" id="qCar" autocomplete="off" placeholder="e.g. 2019 Honda CR-V"></label>
         <div style="margin-top:1rem"><button type="button" class="chk" id="qFirst">This is my first detail with Summer-Salt<em>−$20</em></button></div>
         <label class="fld">Anything I should know? <small>(optional)</small><textarea class="inp" id="qNotes" placeholder="Dog hair in the back, sand everywhere, etc."></textarea></label>
+        <div style="margin-top:.8rem"><button type="button" class="chk" id="qTexts">Text me reminders &amp; deals (reply STOP anytime)</button></div>
       </div>
 
       <div class="pane" data-step="7" hidden>
@@ -891,6 +896,26 @@ document.querySelectorAll('.ba').forEach(function(b){
 
 (function(){
   var PHONE='+17329551026';
+  /* Google Sheet lead tracker (apps-script/README.md). Paste the /exec URL here.
+     Leave '' and the form works exactly as before: it just opens Messages. */
+  var SHEET_URL='';
+  var LEAD_ID='L'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+
+  /* Where did this visitor come from? Saved once per visit so it survives page changes. */
+  var SOURCE=(function(){
+    try{
+      var saved=sessionStorage.getItem('ssSrc'); if(saved) return saved;
+      var q=new URLSearchParams(location.search),s='';
+      var src=q.get('src')||q.get('utm_source')||(q.get('deal')!=='web'?q.get('deal'):''),ad=q.get('ad'),camp=q.get('utm_campaign');
+      if(q.get('gclid')) s='Google ad';
+      else if(src){ s=({fb:'Facebook',facebook:'Facebook',ig:'Instagram',instagram:'Instagram',google:'Google',nd:'Nextdoor',nextdoor:'Nextdoor',flyer:'Flyer',qr:'QR code',card:'Business card',sign:'Yard sign'})[src.toLowerCase()]||src;
+        if(ad) s+=' ad '+ad; if(camp) s+=' ('+camp+')'; }
+      else if(q.get('fbclid')) s='Facebook';
+      else if(document.referrer){ var h=new URL(document.referrer).hostname.replace(/^www\./,'');
+        if(h!==location.hostname.replace(/^www\./,'')) s=/google\./.test(h)?'Google search':/facebook|^fb\.|^m\.facebook/.test(h)?'Facebook':/instagram/.test(h)?'Instagram':/nextdoor/.test(h)?'Nextdoor':/bing\./.test(h)?'Bing search':h; }
+      s=s||'Direct'; sessionStorage.setItem('ssSrc',s); return s;
+    }catch(e){return ''}
+  })();
 
   /* ===== DEALS — change amounts/codes here =====
      Everyone gets "web". A link ending in ?deal=fb gets "fb" instead. */
@@ -913,7 +938,7 @@ document.querySelectorAll('.ba').forEach(function(b){
   var VEH={sedan:'Sedan / Coupe',suv:'SUV',truck:'3-Row / Truck'};
   var PKG={standard:'Standard Detail',premium:'Premium Detail'};
   var TIMES=['8:00 AM','10:00 AM','12:00 PM','2:00 PM','4:00 PM'];
-  var s={step:1,veh:null,pkg:null,adds:[],day:null,time:null,flex:false,first:false,place:null};
+  var s={step:1,veh:null,pkg:null,adds:[],day:null,time:null,flex:false,first:false,texts:false,place:null};
   var bk=document.getElementById('quote'); if(!bk) return;
   var $=function(q){return bk.querySelector(q)}, $$=function(q){return bk.querySelectorAll(q)};
   var N=7;
@@ -940,10 +965,11 @@ document.querySelectorAll('.ba').forEach(function(b){
     if(n===2) return !!s.pkg;
     if(n===4) return s.flex||(s.day&&s.time);
     if(n===5) return !!$('#qAddr').value.trim();
-    if(n===6) return !!$('#qName').value.trim();
+    if(n===6) return !!$('#qName').value.trim()&&phoneDigits().length>=10;
     return true;
   }
-  var HINT={1:'Pick your vehicle type to continue.',2:'Pick a package to continue.',4:'Pick a day and time, or tap "I\'m flexible".',5:'Add your address so I know where to come.',6:'Add your name so I know who I\'m texting.'};
+  var HINT={1:'Pick your vehicle type to continue.',2:'Pick a package to continue.',4:'Pick a day and time, or tap "I\'m flexible".',5:'Add your address so I know where to come.',6:'Add your name and cell number (with area code) so I can text you back.'};
+  function phoneDigits(){return $('#qPhone').value.replace(/\D/g,'').replace(/^1(?=\d{10}$)/,'')}
   function when(){ return s.flex?'Flexible — send me options':(s.day+' · '+s.time) }
   function addrLines(){
     var raw=$('#qAddr').value.trim();
@@ -954,6 +980,7 @@ document.querySelectorAll('.ba').forEach(function(b){
     var t=total(), a=addrLines(), car=$('#qCar').value.trim(), notes=$('#qNotes').value.trim();
     var L=['Hi Christian! New detail request:',
       'Name: '+$('#qName').value.trim()+(s.first?' (first-time customer)':''),
+      'Phone: '+$('#qPhone').value.trim(),
       'Vehicle: '+VEH[s.veh]+(car?' — '+car:''),
       'Package: '+PKG[s.pkg]+' ($'+PRICES[s.veh][s.pkg]+')'];
     if(s.adds.length) L.push('Add-ons: '+s.adds.map(function(x){return x.name+' (+$'+x.cost+')'}).join(', '));
@@ -968,6 +995,27 @@ document.querySelectorAll('.ba').forEach(function(b){
     return L.join('\n');
   }
   function smsHref(){return 'sms:'+PHONE+'?&body='+encodeURIComponent(message())}
+  /* Save the lead to the Google Sheet. Runs when they reach the summary and again when they
+     tap Text, so even people who never hit send in Messages are kept. Same LEAD_ID = same row. */
+  function saveLead(){
+    if(!SHEET_URL||!s.veh||!s.pkg) return;
+    try{
+      var a=addrLines(),P=price();
+      var codes=[]; if(P.first) codes.push(FIRST.code); codes.push(DEAL.code);
+      var body=JSON.stringify({
+        business:'detailing',leadId:LEAD_ID,
+        name:$('#qName').value.trim(),phone:$('#qPhone').value.trim(),
+        address:a.town?a.addr+', '+a.town:a.addr,
+        vehicle:VEH[s.veh],car:$('#qCar').value.trim(),
+        package:PKG[s.pkg],addons:s.adds.map(function(x){return x.name}).join(', '),
+        when:when(),price:P.final,code:codes.join(' + '),firstTime:s.first,
+        notes:$('#qNotes').value.trim(),textsOk:s.texts,
+        campaign:SOURCE,source:location.hostname});
+      /* sendBeacon finishes even when the page switches to the Messages app right after */
+      if(navigator.sendBeacon&&navigator.sendBeacon(SHEET_URL,new Blob([body],{type:'text/plain;charset=utf-8'}))) return;
+      fetch(SHEET_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:body});
+    }catch(e){}
+  }
   function row(k,v,cls){return '<div'+(cls?' class="'+cls+'"':'')+'><dt>'+k+'</dt><dd>'+v.replace(/</g,'&lt;')+'</dd></div>'}
   function summary(){
     var t=total(), a=addrLines(), car=$('#qCar').value.trim(), h='';
@@ -1055,6 +1103,7 @@ document.querySelectorAll('.ba').forEach(function(b){
   function go(n,opt){
     if(stopDrive) stopDrive();
     var prev=s.step; s.step=Math.max(1,Math.min(N,n)); render();
+    if(s.step===N&&prev!==N) saveLead();
     if(prev!==s.step){
       var pane=bk.querySelector('.pane[data-step="'+s.step+'"]');
       pane.classList.remove('in-fwd','in-back');
@@ -1080,7 +1129,8 @@ document.querySelectorAll('.ba').forEach(function(b){
   $('#qFlex').addEventListener('click',function(){s.flex=!s.flex;this.classList.toggle('sel',s.flex);
     if(s.flex){s.day=s.time=null;$$('[data-day],[data-time]').forEach(function(x){x.classList.remove('sel')})} render()});
   $('#qFirst').addEventListener('click',function(){s.first=!s.first;this.classList.toggle('sel',s.first);render()});
-  ['#qName','#qAddr'].forEach(function(id){$(id).addEventListener('input',function(){$('#qNext').setAttribute('aria-disabled',valid(s.step)?'false':'true');$('#qErr').hidden=true})});
+  $('#qTexts').addEventListener('click',function(){s.texts=!s.texts;this.classList.toggle('sel',s.texts)});
+  ['#qName','#qPhone','#qAddr'].forEach(function(id){$(id).addEventListener('input',function(){$('#qNext').setAttribute('aria-disabled',valid(s.step)?'false':'true');$('#qErr').hidden=true})});
 
   $('#qNext').addEventListener('click',function(){
     if(!valid(s.step)){var e=$('#qErr');e.textContent=HINT[s.step]||'';e.hidden=false;return}
@@ -1093,6 +1143,7 @@ document.querySelectorAll('.ba').forEach(function(b){
   $('#qSend').addEventListener('click',function(){
     this.href=smsHref();
     $('#qMsg').value=message()+'\n';
+    saveLead();
     try{ if(window.gtag) gtag('event','generate_lead',{value:price().final,currency:'USD'}); }catch(err){}
     setTimeout(function(){$('#qFallback').hidden=false},1500);
   });
