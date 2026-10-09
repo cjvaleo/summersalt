@@ -437,7 +437,7 @@ footer a{color:var(--muted)}
   .hero h1{font-size:clamp(1.75rem,1.25rem + 3vw,2.3rem);margin-bottom:.25em}
   .hero .lede{font-size:.98rem;margin-bottom:.9rem}
   .deal-pill{padding:.7rem .85rem;margin-bottom:.9rem;font-size:.92rem}
-  .cta-row .btn-ghost{display:none}
+  .cta-row .btn-ghost:not(.keep){display:none}
   .trust{margin-top:.9rem}
   .book{border:0;background:var(--bg)}
   .book .wrap{padding:0 12px}
@@ -474,7 +474,7 @@ footer a{color:var(--muted)}
 <header>
   <div class="wrap bar">
     <a class="brand" href="#top"><img src="ss-logo.webp" alt="" width="46" height="46"><span><b>Summer-Salt</b><small>Mobile Detailing · Jersey Shore</small></span></a>
-    <nav><a href="#results">Results</a><a href="#packages">Packages</a><a href="#reviews">Reviews</a><a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></nav>
+    <nav><a href="#results">Our work</a><a href="#packages">Prices</a><a href="#reviews">Reviews</a><a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></nav>
     <a class="btn btn-main" href="#quote">Get free quote</a>
     <a class="btn btn-main hdr-q" href="#quote">Free quote</a>
   </div>
@@ -494,7 +494,7 @@ footer a{color:var(--muted)}
 
       <div class="cta-row">
         <a class="btn btn-main btn-lg" href="#quote">Get my free quote</a>
-        <a class="btn btn-ghost btn-lg" href="#packages">See packages</a>
+        <a class="btn btn-ghost btn-lg keep" href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">Text me</a>
       </div>
 
       <ul class="trust">
@@ -522,6 +522,87 @@ footer a{color:var(--muted)}
     </div>
   </div>
 </div>
+
+<section class="results" id="results">
+  <div class="wrap">
+    <div class="sec-head"><h2>See the difference</h2><p>Real cars from real Jersey Shore driveways. The messier it starts, the better this gets.</p></div>
+    <div class="ba-grid">
+      <figure class="pair">
+        <div class="ph"><img src="ss-ba1_before.jpg" alt="Center console before detailing" loading="lazy" style="object-position:50% 72%"><span class="ba-tag l">Before</span></div>
+        <div class="ph"><img src="ss-ba1_after.jpg" alt="Center console after detailing" loading="lazy" style="object-position:50% 62%"><span class="ba-tag r">After</span></div>
+        <figcaption>Center console · crumbs, coins and grime gone</figcaption>
+      </figure>
+      <figure class="pair">
+        <div class="ph"><img src="ss-ba2_before.jpg" alt="Jeep back seat before detailing" loading="lazy" decoding="async"><span class="ba-tag l">Before</span></div>
+        <div class="ph"><img src="ss-ba2_after.jpg" alt="Jeep back seat after detailing" loading="lazy" decoding="async"><span class="ba-tag r">After</span></div>
+        <figcaption>Jeep Wrangler · pet hair and mud, fully reset</figcaption>
+      </figure>
+    </div>
+    <p class="swipe-hint">Swipe for more →</p>
+  </div>
+  <div class="wrap"><div class="cta-strip">
+    <a class="btn btn-main" href="#quote">Get my free quote</a>
+    <p><b class="deal-amt">$20 off</b> online · $40 off your first detail · or text <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></p>
+  </div></div>
+</section>
+
+<section id="packages">
+  <div class="wrap">
+    <div class="sec-head"><h2>Two packages. That's it.</h2><p>Pick one, get your quote, done. Prices for most vehicles in normal condition.</p></div>
+    <div class="packs">
+      <article class="pack">
+        <div class="pack-img"><img src="ss-pk_std.jpg" alt="Black sedan freshly detailed in a driveway" loading="lazy" decoding="async"></div>
+        <div class="pack-body">
+          <h3>Standard Detail</h3>
+          <div class="meta"><span>From <b>$200</b></span><span>2–3 hrs</span></div>
+          <ul>
+            <li>Full interior vacuum</li>
+            <li>Dash, console and doors wiped down</li>
+            <li>All windows, inside and out</li>
+            <li>Hand wash, wheels and tires cleaned</li>
+            <li>Wax protection that lasts 3 months</li>
+          </ul>
+          <div class="sizes"><span>Sedan<b>$200</b></span><span>SUV<b>$240</b></span><span>3-Row / Truck<b>$270</b></span></div>
+        </div>
+      </article>
+      <article class="pack feature">
+        <div class="pack-img"><span class="badge">Most popular</span><img src="ss-pk_prem.jpg" alt="Detailed leather sports car interior" loading="lazy" decoding="async"></div>
+        <div class="pack-body">
+          <h3>Premium Detail</h3>
+          <div class="meta"><span>From <b>$300</b></span><span>4–5 hrs</span></div>
+          <ul>
+            <li>Everything in Standard, plus:</li>
+            <li>Carpets and seats shampooed</li>
+            <li>Pet hair and stains pulled out</li>
+            <li>Clay bar — glass-smooth paint</li>
+            <li>Ceramic spray protection, 6 months</li>
+          </ul>
+          <div class="sizes"><span>Sedan<b>$300</b></span><span>SUV<b>$330</b></span><span>3-Row / Truck<b>$360</b></span></div>
+        </div>
+      </article>
+    </div>
+    <p class="addons-inline">Add-ons: <b>Heavy pet hair</b> from $30 · <b>Odor removal</b> from $40 · <b>Trim restoration</b> from $40</p>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head"><h2>5.0 stars on Google</h2><p>What Jersey Shore drivers are saying. <a href="https://www.google.com/search?q=Summer-Salt+Car+Detailing+Seaside+Heights+NJ" target="_blank" rel="noopener">See all reviews on Google ↗</a></p></div>
+    <div id="ti-reviews"><script defer async src='https://cdn.trustindex.io/loader.js?61904a0810e3953037066a09c58'></script></div>
+    <div class="revs" id="revFallback">
+      <div class="rev"><div class="rev-top"><span class="stars">★★★★★</span><svg class="gmark" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
+        <p>My car looks better than the day I took it off the lot. The professionalism and the detail to his work is nothing short of stellar.</p><cite>Google review</cite></div>
+      <div class="rev"><div class="rev-top"><span class="stars">★★★★★</span><svg class="gmark" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
+        <p>Did an amazing job on my well soiled Jeep Wrangler. Fast, efficient, and extremely reasonably priced. Give them a chance.</p><cite>Google review</cite></div>
+      <div class="rev"><div class="rev-top"><span class="stars">★★★★★</span><svg class="gmark" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
+        <p>If I could give 10 stars, I would. Superior service from start to finish. My truck has never looked better.</p><cite>Google review</cite></div>
+    </div>
+  </div>
+  <div class="wrap"><div class="cta-strip">
+    <a class="btn btn-main" href="#quote">Get my free quote</a>
+    <p><b class="deal-amt">$20 off</b> online · $40 off your first detail · or text <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></p>
+  </div></div>
+</section>
 
 <section class="book" id="quote-sec">
   <div class="wrap">
@@ -664,211 +745,16 @@ footer a{color:var(--muted)}
   </div>
 </section>
 
-<section class="results" id="results">
-  <div class="wrap">
-    <div class="sec-head"><h2>See the difference</h2><p>Real cars from real Jersey Shore driveways. The messier it starts, the better this gets.</p></div>
-    <div class="ba-grid">
-      <figure class="pair">
-        <div class="ph"><img src="ss-ba1_before.jpg" alt="Center console before detailing" loading="lazy" style="object-position:50% 72%"><span class="ba-tag l">Before</span></div>
-        <div class="ph"><img src="ss-ba1_after.jpg" alt="Center console after detailing" loading="lazy" style="object-position:50% 62%"><span class="ba-tag r">After</span></div>
-        <figcaption>Center console · crumbs, coins and grime gone</figcaption>
-      </figure>
-      <figure class="pair">
-        <div class="ph"><img src="ss-ba2_before.jpg" alt="Jeep back seat before detailing" loading="lazy" decoding="async"><span class="ba-tag l">Before</span></div>
-        <div class="ph"><img src="ss-ba2_after.jpg" alt="Jeep back seat after detailing" loading="lazy" decoding="async"><span class="ba-tag r">After</span></div>
-        <figcaption>Jeep Wrangler · pet hair and mud, fully reset</figcaption>
-      </figure>
-    </div>
-    <p class="swipe-hint">Swipe for more →</p>
-  </div>
-  <div class="wrap"><div class="cta-strip">
-    <a class="btn btn-main" href="#quote">Get my free quote</a>
-    <p><b class="deal-amt">$20 off</b> online · $40 off your first detail · or text <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></p>
-  </div></div>
-</section>
-
-<section class="about" id="about">
-  <div class="wrap about-grid">
-    <div class="me-photo slides" data-every="4000">
-      <img class="on" src="ss-me_point.jpg" alt="Christian, owner of Summer-Salt Car Detailing" width="480" height="839" loading="lazy" decoding="async">
-      <img src="ss-me_portrait.jpg" alt="Christian running the ball for Toms River East" width="480" height="839" loading="lazy" decoding="async">
-    </div>
-    <div>
-      <h2>Hi, I'm Christian 👋</h2>
-      <p>I started Summer-Salt last summer in my driveway in Seaside Heights with a pressure washer and one goal: make every car look new again.</p>
-      <p>Now I come to you anywhere in Ocean and Monmouth County. When you book, I'm the one who shows up and details your car, start to finish. No deposit, you pay when it's done, and I don't leave until you're happy.</p>
-      <div class="cta-strip left">
-        <a class="btn btn-main" href="#quote">Get my free quote</a>
-        <p>or text me: <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section id="packages">
-  <div class="wrap">
-    <div class="sec-head"><h2>Two packages. That's it.</h2><p>Pick one, get your quote, done. Prices for most vehicles in normal condition.</p></div>
-    <div class="packs">
-      <article class="pack">
-        <div class="pack-img"><img src="ss-pk_std.jpg" alt="Black sedan freshly detailed in a driveway" loading="lazy" decoding="async"></div>
-        <div class="pack-body">
-          <h3>Standard Detail</h3>
-          <div class="meta"><span>From <b>$200</b></span><span>2–3 hrs</span></div>
-          <ul>
-            <li>Full interior vacuum</li>
-            <li>Dash, console and doors wiped down</li>
-            <li>All windows, inside and out</li>
-            <li>Hand wash, wheels and tires cleaned</li>
-            <li>Wax protection that lasts 3 months</li>
-          </ul>
-          <div class="sizes"><span>Sedan<b>$200</b></span><span>SUV<b>$240</b></span><span>3-Row / Truck<b>$270</b></span></div>
-        </div>
-      </article>
-      <article class="pack feature">
-        <div class="pack-img"><span class="badge">Most popular</span><img src="ss-pk_prem.jpg" alt="Detailed leather sports car interior" loading="lazy" decoding="async"></div>
-        <div class="pack-body">
-          <h3>Premium Detail</h3>
-          <div class="meta"><span>From <b>$300</b></span><span>4–5 hrs</span></div>
-          <ul>
-            <li>Everything in Standard, plus:</li>
-            <li>Carpets and seats shampooed</li>
-            <li>Pet hair and stains pulled out</li>
-            <li>Clay bar — glass-smooth paint</li>
-            <li>Ceramic spray protection, 6 months</li>
-          </ul>
-          <div class="sizes"><span>Sedan<b>$300</b></span><span>SUV<b>$330</b></span><span>3-Row / Truck<b>$360</b></span></div>
-        </div>
-      </article>
-    </div>
-    <p class="addons-inline">Add-ons: <b>Heavy pet hair</b> from $30 · <b>Odor removal</b> from $40 · <b>Trim restoration</b> from $40</p>
-  </div>
-</section>
-
-
-<section id="reviews">
-  <div class="wrap">
-    <div class="sec-head"><h2>5.0 stars on Google</h2><p>What Jersey Shore drivers are saying. <a href="https://www.google.com/search?q=Summer-Salt+Car+Detailing+Seaside+Heights+NJ" target="_blank" rel="noopener">See all reviews on Google ↗</a></p></div>
-    <div id="ti-reviews"><script defer async src='https://cdn.trustindex.io/loader.js?61904a0810e3953037066a09c58'></script></div>
-    <div class="revs" id="revFallback">
-      <div class="rev"><div class="rev-top"><span class="stars">★★★★★</span><svg class="gmark" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
-        <p>My car looks better than the day I took it off the lot. The professionalism and the detail to his work is nothing short of stellar.</p><cite>Google review</cite></div>
-      <div class="rev"><div class="rev-top"><span class="stars">★★★★★</span><svg class="gmark" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
-        <p>Did an amazing job on my well soiled Jeep Wrangler. Fast, efficient, and extremely reasonably priced. Give them a chance.</p><cite>Google review</cite></div>
-      <div class="rev"><div class="rev-top"><span class="stars">★★★★★</span><svg class="gmark" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></div>
-        <p>If I could give 10 stars, I would. Superior service from start to finish. My truck has never looked better.</p><cite>Google review</cite></div>
-    </div>
-  </div>
-  <div class="wrap"><div class="cta-strip">
-    <a class="btn btn-main" href="#quote">Get my free quote</a>
-    <p><b class="deal-amt">$20 off</b> online · $40 off your first detail · or text <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></p>
-  </div></div>
-</section>
-
-<section class="results">
-  <div class="wrap">
-    <div class="sec-head"><h2>How it works</h2><p>No accounts, no deposit, no shop visit.</p></div>
-    <ol class="how">
-      <li><h3>Get your quote</h3><p>Pick your vehicle and package above. Takes about 30 seconds.</p></li>
-      <li><h3>Text it to me</h3><p>One tap sends it with your discount locked in. I'll confirm your time, usually within the hour.</p></li>
-      <li><h3>I come to you</h3><p>At your home anywhere in Ocean or Monmouth County. I just need an outdoor spigot and an outlet near the car. Pay when it's done — cash, card, Venmo, Zelle or Apple Pay.</p></li>
-    </ol>
-  </div>
-  <div class="wrap"><div class="cta-strip">
-    <a class="btn btn-main" href="#quote">Get my free quote</a>
-    <p><b class="deal-amt">$20 off</b> online · $40 off your first detail · or text <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></p>
-  </div></div>
-</section>
-
-<section id="area">
-  <div class="wrap">
-    <div class="sec-head"><h2>Where I go</h2><p>All of Ocean and Monmouth County — based in Seaside Heights. Tap a pin to see the town.</p></div>
-    <div class="area-grid">
-      <div>
-        <div class="map" id="gmap">
-          <iframe src="https://maps.google.com/maps?ll=40.02,-74.25&z=9&t=m&hl=en&output=embed" title="Google Map of Ocean and Monmouth County NJ" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe>
-          <div class="pins" id="pins" role="list" aria-label="Towns served"></div>
-          <div class="pin-tip" id="pinTip" hidden></div>
-        </div>
-        <div class="map-bar"><div class="map-key"><span><i class="k oc"></i>Ocean County</span><span><i class="k mc"></i>Monmouth County</span></div>
-          <a class="map-open" href="https://www.google.com/maps/@40.02,-74.25,9z" target="_blank" rel="noopener">Open in Google Maps ↗</a></div>
-      </div>
-      <div class="area-lists">
-                <h3>Ocean County</h3><p class="tl" id="tlOC"></p>
-        <h3>Monmouth County</h3><p class="tl" id="tlMC"></p>
-        <p class="area-note">Not listed? Text me anyway — I travel for bigger jobs and multiple cars.</p>
-      </div>
-    </div>
-  </div>
-  <div class="wrap"><div class="cta-strip">
-    <a class="btn btn-main" href="#quote">Get my free quote</a>
-    <p><b class="deal-amt">$20 off</b> online · $40 off your first detail · or text <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a></p>
-  </div></div>
-</section>
-
-
-
 </main>
 
 <footer>
-  <div class="wrap">Summer-Salt Car Detailing · Mobile detailing, Ocean County NJ · <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a> · <a href="https://www.instagram.com/SummerSalt.CarDetailing/">Instagram</a></div>
+  <div class="wrap">Summer-Salt Car Detailing · Mobile detailing, Ocean County NJ · <a href="sms:+17329551026?&body=Hi%20Christian%20-%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20%5Byear%2Fmake%2Fmodel%5D%20and%20I%27m%20in%20%5Btown%5D.">(732) 955-1026</a> · <a href="https://www.instagram.com/SummerSalt.CarDetailing/">Instagram</a><br><small>Serving Toms River, Seaside Heights, Seaside Park, Lavallette, Brick, Point Pleasant, Lakewood, Jackson, Manchester, Bayville, Forked River, Manasquan, Wall, Belmar, Asbury Park, Howell, Freehold, Red Bank and all of Ocean &amp; Monmouth County.</small></div>
 </footer>
 
 <div class="stick"><a class="btn btn-main btn-block" href="#quote">Get my free quote · <span class="deal-amt">$20 off</span></a></div>
 
 <script>
 
-/* ---------- service area town lists ---------- */
-(function(){
-  var T=[ // [name, lat, lon, group, label-always]
-   ['Toms River',39.9537,-74.1979,'oc','l'],['Seaside Heights',39.9443,-74.0729,'oc','r'],['Seaside Park',39.9265,-74.0771,'oc'],
-   ['Ortley Beach',39.9557,-74.0735,'oc'],['Lavallette',39.9704,-74.0688,'oc'],['Mantoloking',40.0418,-74.0507,'oc'],
-   ['Bay Head',40.0707,-74.0457,'oc'],['Point Pleasant',40.0832,-74.0682,'oc'],['Point Pleasant Beach',40.0912,-74.0479,'oc'],
-   ['Brick',40.0600,-74.1100,'oc'],['Lakewood',40.0979,-74.2176,'oc','l'],['Jackson',40.0977,-74.3650,'oc'],
-   ['Manchester',40.0020,-74.3200,'oc'],['Lakehurst',40.0146,-74.3113,'oc'],['Whiting',39.9529,-74.3771,'oc'],
-   ['Island Heights',39.9418,-74.1499,'oc'],['Pine Beach',39.9357,-74.1707,'oc'],['Beachwood',39.9390,-74.1932,'oc'],
-   ['Ocean Gate',39.9265,-74.1335,'oc'],['Bayville',39.9096,-74.1546,'oc'],['Forked River',39.8398,-74.1904,'oc','r'],
-   ['Waretown',39.7910,-74.1952,'oc'],['Barnegat',39.7532,-74.2229,'oc'],['Manahawkin',39.6954,-74.2587,'oc'],
-   ['Long Beach Island',39.6429,-74.1804,'oc','r'],['Tuckerton',39.6032,-74.3402,'oc'],['New Egypt',40.0676,-74.5302,'oc'],
-   ['Manasquan',40.1262,-74.0493,'mc'],['Brielle',40.1082,-74.0565,'mc'],['Sea Girt',40.1320,-74.0346,'mc'],
-   ['Spring Lake',40.1532,-74.0282,'mc'],['Wall',40.1500,-74.1000,'mc'],['Belmar',40.1784,-74.0218,'mc'],
-   ['Neptune',40.2004,-74.0279,'mc'],['Ocean Grove',40.2112,-74.0071,'mc'],['Asbury Park',40.2204,-74.0121,'mc','r'],
-   ['Ocean Township',40.2537,-74.0496,'mc'],['Howell',40.1818,-74.1943,'mc'],['Farmingdale',40.1965,-74.1685,'mc'],
-   ['Freehold',40.2601,-74.2738,'mc','l'],['Manalapan',40.2807,-74.3432,'mc'],['Colts Neck',40.2890,-74.1743,'mc'],
-   ['Marlboro',40.3154,-74.2463,'mc'],['Tinton Falls',40.3043,-74.1005,'mc'],['Eatontown',40.2962,-74.0510,'mc'],
-   ['Long Branch',40.3043,-73.9924,'mc'],['Red Bank',40.3471,-74.0643,'mc','r'],['Rumson',40.3718,-73.9999,'mc'],
-   ['Sea Bright',40.3615,-73.9743,'mc'],['Holmdel',40.3451,-74.1843,'mc'],['Middletown',40.3940,-74.1177,'mc'],
-   ['Matawan',40.4148,-74.2296,'mc'],['Keyport',40.4332,-74.1996,'mc'],
-   
-   
-  ];
-  [['oc','tlOC'],['mc','tlMC']].forEach(function(g){var el=document.getElementById(g[1]);
-    if(el) el.textContent=T.filter(function(t){return t[3]===g[0]}).map(function(t){return t[0]}).join(' · ')});
-
-  /* pins sit on top of the Google map. MUST match MAP_CENTER/ZOOM in the embed link */
-  var CLAT=40.02,CLON=-74.25,Z=9, box=document.getElementById('pins'), tip=document.getElementById('pinTip');
-  if(!box) return;
-  function px(lat,lon){var s=256*Math.pow(2,Z),sn=Math.sin(lat*Math.PI/180);
-    return [(lon+180)/360*s,(0.5-Math.log((1+sn)/(1-sn))/(4*Math.PI))*s]}
-  var c=px(CLAT,CLON);
-  function show(b,t){tip.textContent=t;tip.style.left=b.style.left;tip.style.top=b.style.top;tip.hidden=false}
-  T.forEach(function(t){
-    var q=px(t[1],t[2]),b=document.createElement('button');
-    b.type='button';b.className='pin '+t[3]+(t[4]?' '+t[4]:'');b.setAttribute('role','listitem');b.setAttribute('aria-label',t[0]);
-    b.style.left='calc(50% + '+(q[0]-c[0]).toFixed(1)+'px)';b.style.top='calc(50% + '+(q[1]-c[1]).toFixed(1)+'px)';
-    if(t[4]){var l=document.createElement('b');l.textContent=t[0];b.appendChild(l)}
-    b.addEventListener('mouseenter',function(){show(b,t[0])});b.addEventListener('mouseleave',function(){tip.hidden=true});
-    b.addEventListener('focus',function(){show(b,t[0])});b.addEventListener('blur',function(){tip.hidden=true});
-    box.appendChild(b);
-  });
-  box.addEventListener('click',function(e){   // pick the pin nearest the tap (towns are close together)
-    var best=null,bd=1e9;
-    box.querySelectorAll('.pin').forEach(function(b){var r=b.getBoundingClientRect(),
-      d=Math.hypot(r.left+r.width/2-e.clientX,r.top+r.height/2-e.clientY);if(d<bd){bd=d;best=b}});
-    if(best&&bd<28) show(best,best.getAttribute('aria-label'));
-  });
-  document.addEventListener('click',function(e){if(!e.target.closest||!e.target.closest('.pins'))tip.hidden=true});
-})();
 /* photo slideshows: load the rest after the page, then crossfade */
 (function(){var slow=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('.slides').forEach(function(s){var im=[].slice.call(s.querySelectorAll('img')),i=0;if(im.length<2)return;
